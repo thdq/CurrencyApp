@@ -87,3 +87,7 @@ tasks.withType(GroovyCompile) {
         forkOptions.jvmArgs = ['-Xmx1024m']
     }
 }
+
+task wrapper(type: Wrapper){
+   gradleVersion = '2.14.1'
+}
