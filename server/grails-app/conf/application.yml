@@ -90,7 +90,6 @@ dataSource:
 environments:
     development:
         dataSource:
-            dbCreate: create
             driverClassName: "org.postgresql.Driver"
             dialect: "org.hibernate.dialect.PostgreSQLDialect"
             url: 'jdbc:postgresql://localhost:5432/Currency'
