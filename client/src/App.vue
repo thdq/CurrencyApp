@@ -1,14 +1,21 @@
 <template>
-
+    <base-container>
+    </base-container>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import BaseContainer from "./components/shared/base-container.vue";
 
+export default {
+    name: "App",
+    components: {
+        BaseContainer,
+    },
+    setup() {
 
-export default defineComponent({
-  name: 'App'
-})
+    }
+}
+
 </script>
 
 <style>
