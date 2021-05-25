@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-screen">
+    <div class="container mx-auto w-full h-screen">
         <slot />
     </div>
 </template>
