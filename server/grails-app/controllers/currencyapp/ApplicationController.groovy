@@ -10,5 +10,8 @@ class ApplicationController implements PluginManagerAware {
 
     def index() {
         [grailsApplication: grailsApplication, pluginManager: pluginManager]
+
+        SchedulerJob.execute()
+
     }
 }
