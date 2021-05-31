@@ -3,14 +3,14 @@ package currencyapp
 class SchedulerJob {
 
     static triggers = {
-      simple repeatInterval: 60000l
+      simple repeatInterval: 600000l
     }
 
-    def execute() {
+    void execute() {
 
-        UpdateCurrenciesServices updateCurrenciesServices = new UpdateCurrenciesServices()
+        def currenciesServices = new CurrenciesServices()
 
-        updateCurrenciesServices.handle()
+        currenciesServices.handle()
 
     }
 }
