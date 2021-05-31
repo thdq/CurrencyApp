@@ -72,6 +72,7 @@ dependencies {
     testCompile "org.hibernate.validator:hibernate-validator:6.0.20.Final"
     compile 'org.grails.plugins:quartz:2.0.13'
     compile 'org.quartz-scheduler:quartz:2.2.1'
+    implementation 'me.paulschwarz:spring-dotenv:2.3.0'
 }
 
 bootRun {
