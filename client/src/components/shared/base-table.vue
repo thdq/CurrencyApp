@@ -20,6 +20,9 @@
                     <template v-if="loading" #body>
                         <Skeleton></Skeleton>
                     </template>
+                    <template v-else #body="row">
+                        <span :class="row?.data?.variation > 0? 'positive-variation' : 'negative-variation'"> {{ row?.data?.variation }} </span>
+                    </template>
             </Column>
         </DataTable>
     </div>
@@ -71,5 +74,13 @@ export default {
 </script>
 
 <style scoped>
+
+.negative-variation {
+    @apply border-red-600 border-2 rounded-md py-1 px-2 text-red-600 bg-red-100
+}
+
+.positive-variation {
+    @apply border-green-600 border-2 rounded-md py-1 px-2 text-green-600 bg-green-100
+}
 
 </style>
