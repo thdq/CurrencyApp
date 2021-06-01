@@ -1,5 +1,8 @@
 <template>
-    <div class="container mx-auto w-full h-screen">
+    <div>
+        <img class="absolute" src="../../assets/waves.svg"/>
+    </div>
+    <div class="relative container mx-auto w-full">
         <slot />
     </div>
 </template>
