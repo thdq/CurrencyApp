@@ -1,6 +1,6 @@
 <template>
     <base-container>
-        <div class="grid justify-items-center grid-cols-2 gap-4 p-16">
+        <div class="grid justify-items-center lg:grid-cols-2 gap-4 p-16">
 
             <div class="w-full">
                 <div class="flex-1 font-header">
