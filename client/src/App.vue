@@ -25,7 +25,7 @@
                 </template>
                 <template #content>
                     <div v-if="apiHandler.error == false">
-                        <base-table :list="listCurrencies.values" :loading="apiHandler.waitingResponse" />
+                        <base-table :list="listCurrencies" :loading="apiHandler.waitingResponse" />
                     </div>
                     <div v-else>
                         <InlineMessage class="w-full" severity="error">Ocorreu um erro ao recuperar dados da API. 😢</InlineMessage>
@@ -41,7 +41,7 @@ import BaseContainer from "./components/shared/base-container.vue";
 import BaseTable from './components/shared/base-table.vue'
 import Card from 'primevue/card';
 import Button from 'primevue/button';
-import { onMounted, reactive } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 import { CurrencyModel } from './domain/models/currency';
 import { CurrencieServices } from './services/currenciesServices';
 import InlineMessage from 'primevue/inlinemessage';
@@ -63,7 +63,7 @@ export default {
     },
     setup() {
 
-        const listCurrencies = reactive<CurrencyModel[]>([])
+        const listCurrencies = ref<CurrencyModel[]>([])
 
         const apiHandler = reactive<APIHandlerModel>({
             waitingResponse: false,
@@ -78,7 +78,7 @@ export default {
 
                 const currenciesServices = new CurrencieServices()
 
-                listCurrencies.values = await currenciesServices.get() as any
+                listCurrencies.value = await currenciesServices.get()
 
             } catch (error) {
                 apiHandler.error = true
