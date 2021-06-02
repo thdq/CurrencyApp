@@ -53,7 +53,7 @@ export default {
       Column,
       Skeleton
     },
-    setup(props) {
+    setup(props: any) {
 
 
         const computedList = computed(() => {
